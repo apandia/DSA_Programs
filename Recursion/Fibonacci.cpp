@@ -2,6 +2,9 @@
 
 using namespace std;
 
+//In each level number of calls made = 1+2+4+8... (GP). So
+//TC - O(2^N)
+//SC - O(N)
 int Fibonaci(int n)
 {
     if (n == 0 || n == 1){
