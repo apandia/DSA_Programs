@@ -1,3 +1,5 @@
+//TC: O(N^2)
+//SC: O(N)
 class Solution {
 public:
     string getPermutation(int n, int k) {
