@@ -3,7 +3,7 @@
 #include <algorithm>
 
 using namespace std;
-/*Dutch National Flag Algorithm (Three-way partitioning)
+/*Dutch National Flag Algorithm (Three-way partitioning) //LC75
 
 1. If A[mid] == 0, swap A[mid] and A[low] and increment low and mid pointers by 1.
 2. If A[mid] == 1, increment the mid pointer by 1.
