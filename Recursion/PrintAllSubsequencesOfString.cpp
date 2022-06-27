@@ -37,6 +37,9 @@ void printAllSubsequencePowerSet(string str)
     }
 }
 
+// Approach2: Using recursion
+//TC: O(2^n)
+//SC: O(N)      [Recursive stack space
 void printAllSubsequence(string str, int index, string& substring)
 {
     if(index == str.length())
@@ -50,8 +53,6 @@ void printAllSubsequence(string str, int index, string& substring)
     substring.pop_back();
     printAllSubsequence(str, index+1, substring);
 }
-
-// Approach2: Using recursion
 
 int main()
 {
