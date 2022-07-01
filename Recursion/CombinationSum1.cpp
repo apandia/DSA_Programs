@@ -17,6 +17,7 @@ Output:
 
 //TC: O(2^t * k) [t = target, k = average length of combination]
 //For a target of 10, there can be 10 possible choices to either pic or not pick and sometimes same index/value is picked multiple times.
+//Consider array [1,2] and target to be 6, then 1 will be picked 6 times.
 //SC: O(k*x)     [k = average length, x = no. of combinations]
 class Solution {
     public:
