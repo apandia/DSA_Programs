@@ -26,7 +26,7 @@ class Solution {
         //Base case
         if(index == input.size()){
             if(target == 0){
-                ans.push_back(ds);
+                ans.push_back(ds);  // say k elements are pushed to ans, the TC will be k*1=k, TC of push_back is O(1)
             }
             return;
         }
