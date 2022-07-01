@@ -3,8 +3,20 @@
 
 using namespace std;
 
-//TC: O(2^t * k) [t = target, k = average length]
-//For a target of 10, there can be 10 possible choices to either pic or not pick
+// Find list of unique combination whose sum equals target.
+// A number may be chosen multiple times.
+
+// Input array: [2,3,6,7]
+// target = 7
+
+/*
+Output:
+2, 2, 3     [2 is picked 2 times]
+7
+*/
+
+//TC: O(2^t * k) [t = target, k = average length of combination]
+//For a target of 10, there can be 10 possible choices to either pic or not pick and sometimes same index/value is picked multiple times.
 //SC: O(k*x)     [k = average length, x = no. of combinations]
 class Solution {
     public:
