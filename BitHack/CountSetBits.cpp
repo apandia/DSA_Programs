@@ -2,7 +2,9 @@
 
 using namespace std;
 
-//Complexity id theta(log n)
+//Iterate and count.Complexity id theta(log n)
+//All integers can be represented in 32 bits. so max iteration will be 32 for 2^32 elelemnt which is logarithmic.
+//TC is theta (tight bound) as it always iterate for 32 times
 int countSetBits(int n)
 {
 	int count = 0;
@@ -16,34 +18,26 @@ int countSetBits(int n)
 }
 
 //Brian kernigham algorithm O(log n)
-int countSetBitsBK(int n)
-{
-	int temp = n;
-
-	int count = 0;
-	while (n)
-	{
-		n &= (n - 1);
-		count++;
+int countSetBitsBK(int x) {
+	//rightmost set bit(rsb) = x & x" (twos complement of x)
+	//x' (ones complement) = ~x
+	//x" = x'+1 = ~x+1 = -x (twos complement ox is equivalent to -x)
+	int counter = 0;
+	while (x != 0) {
+		int rsbm = x & -x;
+		x -= rsbm;
+		counter++;
 	}
 
-	int c1 = 0;
-	while (temp)
-	{
-		int rsbm = temp & ~temp;
-		temp -= rsbm;
-		c1++;
-	}
-
-	return count;
+	return counter;
 }
 
 int main()
 {
-	int i = 13;
+	int i = 70;
 
-	cout << "\nNumber of Set Bits = " << countSetBits(i);
-	cout << "\nBK Number of Set Bits = " << countSetBitsBK(i);
+	cout << "Number of set Bits Iterate and Count = " << countSetBits(i) << endl;
+	cout << "Number of set Bits Brian Kernighan = " << countSetBitsBK(i) << endl;
 
 	return 0;
 }
