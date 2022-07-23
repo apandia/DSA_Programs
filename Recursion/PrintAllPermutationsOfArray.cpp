@@ -19,7 +19,7 @@ Output:
 
 //TC: O(n! * n)
 //      O(n!) = n! permutations are generated for n
-//      O(n)  = for loop with n iterations
+//      O(n)  = for loop with n iterations to deep copy each permutation to ds i.e. ds.push_back(nums[i]);
 //SC: O(n) + O(n)
 //      O(n)  = for ds vector
 //      O(n)  = for visited array
