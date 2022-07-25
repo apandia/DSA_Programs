@@ -52,11 +52,11 @@ int minEnergyM(int n, vector<int>& height, vector<int>& dp)
     if(dp[n] != -1)
         return dp[n];
 
-    int jumpOnePosition = minEnergy(n-1, height) + abs(height[n] - height[n-1]);
+    int jumpOnePosition = minEnergyM(n-1, height, dp) + abs(height[n] - height[n-1]);
 
     int jumpTwoPosition = INT_MAX;
     if(n > 1)
-        jumpTwoPosition = minEnergy(n-2, height) + abs(height[n] - height[n-2]);
+        jumpTwoPosition = minEnergyM(n-2, height, dp) + abs(height[n] - height[n-2]);
 
     return dp[n] = min(jumpOnePosition, jumpTwoPosition);
 }
