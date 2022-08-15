@@ -51,7 +51,7 @@ bool isPrime3(int n)
     if(n == 1)
         return false;
 
-    for(int i = 2; i*i <= n ; i++)
+    for(int i = 2; i*i <= n ; i++)   //Note we need equal here, say n = 25, we need to run till 5 to get pair (5,5)
     {
         if(n%i == 0)
             return false;
