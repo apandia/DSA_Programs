@@ -33,7 +33,7 @@ bool isPrime2(int n)
 
     int s = (int) sqrt(n);
 
-    for(int i = 2; i < s ; i++)
+    for(int i = 2; i <= s ; i++)
     {
         if(n%i == 0)
             return false;
@@ -51,7 +51,7 @@ bool isPrime3(int n)
     if(n == 1)
         return false;
 
-    for(int i = 2; i*i < n ; i++)
+    for(int i = 2; i*i <= n ; i++)
     {
         if(n%i == 0)
             return false;
