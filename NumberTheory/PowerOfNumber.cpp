@@ -2,7 +2,7 @@
 
 using namespace std;
 
-// Find binary exponention
+// Find power of a number
 
 /*
 Input: 2 ^ 10
