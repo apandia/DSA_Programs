@@ -3,6 +3,9 @@
 
 using namespace std;
 
+#define ll long long
+#define mod 1000000007
+
 // Find Power of Matrix.
 
 // Give a square matrix M and a power N find M raised to N i.e. multiply the matrix with itself N times
@@ -27,16 +30,17 @@ Output:
 */
 //TC: O(m^3 log n)                  [O(m^3 * n) for Brute force]
 //SC: O(m*m) + O(m*m) + O(m*m)      [matrix, identityMatrix and result vector]
-void matrixMultiplication(vector<vector<int>>& A, vector<vector<int>>& B, int m)
+void matrixMultiplication(vector<vector<ll>>& A, vector<vector<ll>>& B, int m)
 {
-    vector<vector<int>> result(m, vector<int>(m, 0));
+    vector<vector<ll>> result(m, vector<ll>(m, 0));
     for (int i = 0; i < m; i++)
     {
         for (int j = 0; j < m; j++)
         {
             for (int k = 0; k < m; k++) 
             {
-                result[i][j] += A[i][k] * B[k][j];
+                //result[i][j] += A[i][k] * B[k][j];
+                result[i][j] = (result[i][j] % mod + ((A[i][k] % mod) * (B[k][j] % mod) % mod)) % mod;
             }
         }
     }
@@ -55,7 +59,7 @@ void solve()
     int m, n;
     cin >> m >> n;
 
-    vector<vector<int>> mat(m, vector<int>(m));
+    vector<vector<ll>> mat(m, vector<ll>(m));
     for (int i = 0; i < m; i++)
     {
         for (int j = 0; j < m; j++)
@@ -64,7 +68,7 @@ void solve()
         }
     }
 
-    vector<vector<int>> identityMatrix(m, vector<int>(m, 0));
+    vector<vector<ll>> identityMatrix(m, vector<ll>(m, 0));
     for (int i = 0; i < m; i++)
     {
         for (int j = 0; j < m; j++)
@@ -106,7 +110,6 @@ void solve()
         }
         cout << "\n";
     }
-    cout << "\n";
 }
 
 int main()
