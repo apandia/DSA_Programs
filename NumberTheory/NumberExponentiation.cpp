@@ -12,6 +12,17 @@ Output: 1024
 
 //Brute Force Method
 //TC: O(N) ans input number will be multiplied n times
+int power(int a, int n)
+{
+    int result = 1;
+
+   for(int i = 0; i < n; i++)
+   {
+       result = result * a;
+   }
+
+    return result;
+}
 
 //Optimized solution
 /*Idea:
@@ -52,6 +63,8 @@ int main()
     int n = 10;
 
     cout<<a<<"^"<<n<<" = "<<binaryExponentiation(a, n)<<endl;
+    cout<<a<<"^"<<n<<" = "<<power(a, n)<<endl;
+
 
     return 0;
 }
