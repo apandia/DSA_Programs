@@ -41,8 +41,11 @@ vector<int> maxSlidingWindowBF(vector<int>& nums, int k)
 }
 
 //Optimized implementation
-//TC: O(N)
-//SC: O(1)
+//TC: O(N) + O(N) = O(N)
+// O(N) = Traversing all elements
+// O(N) = removing N elements from queue
+//SC: O(K)
+// Queue can hold maximum of K elements at any given point of time
 
 /* Approach:
  * 1. Iterate over elements of array
